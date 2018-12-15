@@ -58,6 +58,7 @@ export default class ZeroPaper {
       method: 'PATCH',
       body: JSON.stringify(body),
       headers: {
+        'Content-Type': 'application/json',
         'X-Application-Uid':
           '73d4a5202a0101df4ccd770fd645f9b53e2d1efd3108748a122ff5bafe10a6ab',
         Authorization: `Intuit_IAM_Authentication intuit_userid=193514544004679,intuit_token=${
