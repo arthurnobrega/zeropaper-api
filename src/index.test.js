@@ -3,14 +3,15 @@ import ZeroPaper from '.';
 
 describe('Complete Flow', () => {
   let zeropaper = null;
+  const credentials = {
+    username: 'arthur@github.com',
+    password: '123456789',
+  };
 
   beforeEach(async () => {
     fetch.mock.reset();
 
-    const username = 'arthur@github.com';
-    const password = '123456789';
-
-    zeropaper = new ZeroPaper({ username, password });
+    zeropaper = new ZeroPaper(credentials);
   });
 
   test('logs in the user successfully', async () => {
@@ -22,6 +23,7 @@ describe('Complete Flow', () => {
     expect(fetch.mock.calls()[0]).toMatchObject({
       method: 'POST',
       url: 'https://accounts.zeropaper.com.br/access_client/sign_in',
+      body: JSON.stringify(credentials),
     });
   });
 

@@ -32,14 +32,14 @@ function () {
 
     _classCallCheck(this, ZeroPaper);
 
-    _defineProperty(this, "username", null);
-
-    _defineProperty(this, "password", null);
+    _defineProperty(this, "credentials", null);
 
     _defineProperty(this, "loginToken", null);
 
-    this.username = username;
-    this.password = password;
+    this.credentials = {
+      username: username,
+      password: password
+    };
   }
 
   _createClass(ZeroPaper, [{
@@ -60,7 +60,8 @@ function () {
                   headers: {
                     'Content-Type': ' application/json',
                     intuit_sessionid: 'ACBDC15C8FE44B5AA8482812CB6541CA'
-                  }
+                  },
+                  body: JSON.stringify(this.credentials)
                 });
 
               case 3:
@@ -182,3 +183,4 @@ function () {
 }();
 
 exports.default = ZeroPaper;
+//# sourceMappingURL=index.js.map

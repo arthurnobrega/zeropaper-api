@@ -2,15 +2,12 @@ import fetch from 'node-fetch';
 import querystring from 'querystring';
 
 export default class ZeroPaper {
-  username = null;
-
-  password = null;
+  credentials = null;
 
   loginToken = null;
 
   constructor({ username, password }) {
-    this.username = username;
-    this.password = password;
+    this.credentials = { username, password };
   }
 
   async login() {
@@ -21,6 +18,7 @@ export default class ZeroPaper {
         'Content-Type': ' application/json',
         intuit_sessionid: 'ACBDC15C8FE44B5AA8482812CB6541CA',
       },
+      body: JSON.stringify(this.credentials),
     });
 
     const json = await response.json();
