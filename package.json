@@ -1,0 +1,45 @@
+{
+  "name": "zeropaper-api",
+  "version": "1.0.0",
+  "description": "Unnoficial ZeroPaper API",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src -d dist --ignore '**/__mocks__/','**/*.test.js'",
+    "test": "jest",
+    "lint": "eslint src",
+    "prepublish": "yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurnobrega/zeropaper-api.git"
+  },
+  "author": "Arthur Nobrega",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arthurnobrega/zeropaper-api/issues"
+  },
+  "homepage": "https://github.com/arthurnobrega/zeropaper-api#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/node": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/preset-env": "^7.2.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "prettier": "^1.15.3"
+  },
+  "dependencies": {
+    "node-fetch": "^2.3.0",
+    "querystring": "^0.2.0"
+  }
+}
